@@ -35,8 +35,7 @@ $provider = (new \simPRO\RestClient\OAuth2\ResourceOwner())
 You should only need to do this once per user. Please see below for instructions on how to store and refresh your access token.
 
 ## Authorisation Code Grant
-If your application authenticates using an authorisation code grant, then you will need to redirect them to their
-build to log in and authorise your application. You can do this with the following:
+If your application authenticates using an authorisation code grant, then you will need to redirect them to their build to log in and authorise your application. You can do this with the following:
 ```php
 $buildURL = 'https://client.simprosuite.com'; //Actual url for your customer's build
 $clientID = 'xxx'; //From the key file you received
@@ -76,8 +75,7 @@ Implicit grants are specifically designed for javascript clients. However, the w
 Please see [our documentation](http://developer.simprogroup.com/apidoc/?page=3366d2ea7906f693b27d57ed9cca3acb#tag/Implicit-grant-workflow) for instructions.
 
 ## Store and refresh your tokens
-This applies to resource owner credentials and authorisation code grants. Store your access token by calling `$accessTokenData = $provider->getAccessTokenObject()->jsonSerialize()`
-and saving the data in your database. Then load your subsequent providers using the following:
+Store your access token by calling `$accessTokenData = $provider->getAccessTokenObject()->jsonSerialize()` and saving the data in your database. Then load your subsequent providers using the following:
 ```php
 $provider = (new \simPRO\RestClient\OAuth2\AccessToken())
     ->withBuildURL($buildURL)
@@ -85,12 +83,10 @@ $provider = (new \simPRO\RestClient\OAuth2\AccessToken())
     ->withAccessTokenObject($accessToken)
 ;
 ```
-The system will automatically handle refreshing your access token when it expires.
-However, if you need to refresh the token manually, you may do so by calling `$provider->refreshAccessToken()`
+The system will automatically handle refreshing your access token when it expires. However, if you need to refresh the token manually, you may do so by calling `$provider->refreshAccessToken()`
 
 ## Example code
-Copy (or require) the code from [CustomerWorkflow.php](/examples/CustomerWorkflow.php) and call `seeCustomerWorkflow($provider)`
-to see the full workflow for listing, fetching, creating, updating, and deleting a customer.
+Copy (or require) the code from [CustomerWorkflow.php](examples/CustomerWorkflow.php) and call `seeCustomerWorkflow($provider)` to see the full workflow for listing, fetching, creating, updating, and deleting a customer.
 
 ## Still have questions?
 Feel free to ask us a question on our [support forum](http://apiforum.simprogroup.com/) if you are unable to get your application up and running using our API.
