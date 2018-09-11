@@ -1,6 +1,6 @@
 {
-    "name": "simpro/restclient",
-    "description": "Authenticate and access the simPRO RESTful API",
+    "name": "simpro/restclient-php",
+    "description": "Authenticate and access the simPRO RESTful API using PHP",
     "type": "library",
     "license": "MIT",
     "require": {

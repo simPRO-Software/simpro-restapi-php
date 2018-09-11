@@ -7,7 +7,7 @@ Instructions for how to use each of the grant types are detailed below.
 
 ## How to install
 ```
-composer require simpro/restclient
+composer require simpro/restclient-php
 ```
 
 ## Client Credentials Grant
